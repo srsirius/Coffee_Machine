@@ -16,6 +16,14 @@ class CoffeeMachine:
         self.cups = 9
         self.money = 550
 
+    def __repr__(self):
+        return (
+            f"CoffeeMachine(state={self.state!r}, "
+            f"water={self.water}, milk={self.milk}, "
+            f"beans={self.coffee_beans}, cups={self.cups}, "
+            f"money={self.money})"
+        )
+
     def _check_resources(self, w: int, m: int, b: int, cups_needed=1):
         if self.water < w:
             return False, "Sorry, not enough water!\n"
@@ -139,6 +147,7 @@ class CoffeeMachine:
 
 if __name__ == "__main__":
     machine = CoffeeMachine()
+    print(repr(machine))
     while machine.state != machine.State.EXIT:
         if machine.state == machine.State.MAIN:
             user_input = input(f"Write action (buy, fill, take, remaining, exit):\n")
