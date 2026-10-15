@@ -57,7 +57,6 @@ class CoffeeMachine:
             self.state = self.State.MAIN
             return ""
 
-
         if choice in self.DRINKS:
             drink = self.DRINKS[choice]
             ok, request = self._check_resources(drink.water, drink.milk, drink.beans)
