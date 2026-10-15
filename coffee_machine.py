@@ -63,27 +63,24 @@ class CoffeeMachine:
 
     def _handle_fill_water(self, val='0'):
         self.water += int(val)
-        return f"{self.water} ml of water\n"
 
     def _handle_fill_milk(self, val='0'):
         self.milk += int(val)
-        return f"{self.milk} ml of milk\n"
 
     def _handle_fill_beans(self, val='0'):
         self.coffee_beans += int(val)
-        return f"{self.coffee_beans} g of coffee beans\n"
 
     def _handle_fill_cups(self, val='0'):
         self.cups += int(val)
-        return f"{self.cups} disposable cups\n"
 
     def _status(self):
-        return (f"\nThe coffee machine has:\n"
-                f"{self._handle_fill_water()}"
-                f"{self._handle_fill_milk()}"
-                f"{self._handle_fill_beans()}"
-                f"{self._handle_fill_cups()}"
-                f"${self.money} money\n")
+        return (
+            f"\nThe coffee machine has:\n"
+            f"{self.water} ml of water\n"
+            f"{self.milk} ml of milk\n"
+            f"{self.coffee_beans} g of coffee beans\n"
+            f"{self.cups} disposable cups\n"
+            f"${self.money} money\n")
 
     def _handle_main(self, cmd: str):
         if cmd == "buy":
