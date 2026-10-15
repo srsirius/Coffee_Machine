@@ -147,7 +147,6 @@ class CoffeeMachine:
 
 if __name__ == "__main__":
     machine = CoffeeMachine()
-    print(repr(machine))
     while machine.state != machine.State.EXIT:
         if machine.state == machine.State.MAIN:
             user_input = input(f"Write action (buy, fill, take, remaining, exit):\n")
